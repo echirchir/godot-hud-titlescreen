@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/montserrat_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/return_to_title.gd" type="Script" id=2]
+
+[node name="NewGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 425.0
+margin_top = 295.0
+margin_right = 854.0
+margin_bottom = 425.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 429.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0.266667, 0.760784, 0.105882, 1 )
+custom_constants/line_spacing = 5
+custom_constants/shadow_offset_y = 5
+text = "New Game Scene"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 429.0
+margin_bottom = 130.0
+custom_fonts/font = ExtResource( 1 )
+text = "Back"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
